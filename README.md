@@ -1,2 +1,2 @@
-# problems
-Collection of standalone problems solved.
+# Collection of Algorithms and Coding Problems solution
+
