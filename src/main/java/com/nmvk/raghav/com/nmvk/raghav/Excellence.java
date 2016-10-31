@@ -19,7 +19,7 @@ public class Excellence {
 		//Sort
 		Arrays.sort(data);
 		
-		PriorityQueue<Integer> teamRank = new PriorityQueue<>();
+		PriorityQueue<Integer> teamRank = new PriorityQueue<Integer>();
 		
 		int i = 0;
 		int mid = data.length /2;

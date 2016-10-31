@@ -18,16 +18,18 @@ public class Coins {
 	}
 
 	public static long makeChange(int[] coins, int money) {
-        long[] DP = new long[money + 1]; // O(N) space.
-        DP[0] = (long)1; 	// n == 0 case.
-        for(int i = 0 ; i < coins.length; i++) {
-            int coin = coins[i];
-            for(int j = coin; j < DP.length; j++) {
-            // The only tricky step.
-                DP[j] += (j - coin >= 0 ? DP[j - coin] : 0);
-                System.out.println(Arrays.toString(DP));
-            }
-        }       
-        return DP[money];
+       long[] ways = new long[money +1];
+       Arrays.sort(coins);
+       ways[0] = 1;
+       for(int c : coins)
+       {
+    	   for(int k = c; k <= money;k++)
+    	   {
+    		   ways[k] += ways[k - c];
+    	   }
+       }
+       
+       System.out.println();
+       return ways[money];
     } 
 }
